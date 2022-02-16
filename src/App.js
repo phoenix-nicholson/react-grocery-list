@@ -1,10 +1,10 @@
 import './App.css';
-import ItemForm from './components/Form/ItemForm';
+import Shop from './views/Shop/Shop';
 
 function App() {
   return (
     <div className="App">
-      <ItemForm />
+      <Shop />
     </div>
   );
 }

@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 
-export default function ItemForm({ handleAdditem }) {
+export default function ItemForm({ handleAddItem }) {
   const [newItem, setNewItem] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewItem('');
-    handleAdditem(newItem);
+    handleAddItem(newItem);
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <input type="text" placeholder="add item"></input>
+          <input
+            type="text"
+            placeholder="add item"
+            onChange={(e) => setNewItem(e.target.value)}
+          ></input>
         </div>
 
-        <button> submit </button>
+        <button type="submit"> submit </button>
       </form>
     </div>
   );
