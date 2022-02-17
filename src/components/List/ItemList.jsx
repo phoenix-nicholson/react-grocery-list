@@ -36,7 +36,7 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
     itemContent = (
       <>
         <p>{item.text}</p>
-        <button aria-label="Edit Button" onClick={() => setEditItem(true)}>
+        <button aria-label={`Edit ${item.text}`} onClick={() => setEditItem(true)}>
           edit
         </button>
       </>
@@ -56,7 +56,11 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
         }}
       />
       {itemContent}
-      <button aria-label="Delete Button" type="button" onClick={() => handleDeleteItem(item.id)}>
+      <button
+        aria-label={`Delete ${item.text}`}
+        type="button"
+        onClick={() => handleDeleteItem(item.id)}
+      >
         delete
       </button>
     </label>

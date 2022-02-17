@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
+test('Should test function of shopping list', () => {
   render(<App />);
 
   const addInput = screen.getByPlaceholderText('add item');
@@ -20,7 +20,7 @@ test('renders learn react link', () => {
 
   //forgot steps//
   //edit newly added item
-  const editBtn = screen.getByText('edit');
+  const editBtn = screen.getByLabelText('Edit Chicken 🍗');
   userEvent.click(editBtn);
   const editInput = screen.getByLabelText('Edit Field');
   const saveEditInput = screen.getByLabelText('Save Button');
@@ -34,7 +34,7 @@ test('renders learn react link', () => {
   expect(saveEditInput).not.toBeInTheDocument();
 
   //delete the edited item
-  const deleteBtn = screen.getByLabelText('Delete Button');
+  const deleteBtn = screen.getByLabelText('Delete Bento 🍱');
   userEvent.click(deleteBtn);
   expect(screen.getByText('Bento')).not.toBeInTheDocument();
 });
