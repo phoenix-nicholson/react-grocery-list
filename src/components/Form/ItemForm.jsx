@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ItemForm.css';
 
-export default function ItemForm({ handleAddItem, items }) {
+export default function ItemForm({ handleAddItem }) {
   const [newItem, setNewItem] = useState('');
 
   const handleSubmit = (e) => {
@@ -9,7 +9,6 @@ export default function ItemForm({ handleAddItem, items }) {
     setNewItem('');
     handleAddItem(newItem);
   };
-  console.log('items', items);
 
   return (
     <div className="itemForm">

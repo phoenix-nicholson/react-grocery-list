@@ -5,7 +5,7 @@ import ItemList from '../../components/List/ItemList';
 const initialEntry = [
   { id: 0, text: 'Meat 🍖', done: false },
   { id: 1, text: 'Rice 🍚', done: false },
-  { id: 2, text: 'drink 🍶 ', done: false },
+  { id: 2, text: 'Sake 🍶 ', done: false },
 ];
 
 function itemReducer(items, action) {
@@ -62,7 +62,7 @@ export default function Shop() {
   };
   return (
     <div>
-      <ItemForm handleAddItem={handleAddItem} items={items} />
+      <ItemForm handleAddItem={handleAddItem} />
       <ItemList items={items} handleDeleteItem={handleDeleteItem} handleEditItem={handleEditItem} />
     </div>
   );
