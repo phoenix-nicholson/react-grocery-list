@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-export default function ItemList({ items, handleEditItem }) {
+export default function ItemList({ items, handleEditItem, handleDeleteItem }) {
   return (
     <div>
       {items.map((item) => (
         <div key={item.id}>
           <h4>{item.text}</h4>
-          <Item handleEditItem={handleEditItem} />
+          <Item item={item} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
         </div>
       ))}
     </div>
