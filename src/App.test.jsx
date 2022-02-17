@@ -23,7 +23,18 @@ test('renders learn react link', () => {
   const editBtn = screen.getByText('edit');
   userEvent.click(editBtn);
   const editInput = screen.getByLabelText('Edit Field');
+  const saveEditInput = screen.getByLabelText('Save Button');
+  userEvent.type(editInput, '{selectall}{del}Bento 🍱');
+  userEvent.click(saveEditInput);
+
   //Make sure our edits persisted and the edit button is replaced
+  screen.getByText('Bento 🍱');
+  expect(screen.queryByText('Bento 🍱')).not.toBeInTheDocument();
+  expect(editInput).not.toBeInTheDocument();
+  expect(saveEditInput).not.toBeInTheDocument();
 
   //delete the edited item
+  const deleteBtn = screen.getByLabelText('Delete Button');
+  userEvent.click(deleteBtn);
+  expect(screen.getByText('Bento')).not.toBeInTheDocument();
 });
