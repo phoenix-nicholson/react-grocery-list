@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import './ItemList.css';
 
 export default function ItemList({ items, handleEditItem, handleDeleteItem }) {
   return (
-    <div>
+    <div className="itemList">
       {items.map((item) => (
-        <div key={item.id}>
-          <h4>{item.text}</h4>
+        <div className="item" key={item.id}>
           <Item item={item} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
         </div>
       ))}
@@ -51,7 +51,7 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
       />
       {itemContent}
       <button type="button" onClick={() => handleDeleteItem(item.id)}>
-        deleted
+        delete
       </button>
     </label>
   );

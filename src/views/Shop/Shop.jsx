@@ -63,7 +63,7 @@ export default function Shop() {
   return (
     <div>
       <ItemForm handleAddItem={handleAddItem} items={items} />
-      <ItemList items={items} />
+      <ItemList items={items} handleDeleteItem={handleDeleteItem} handleEditItem={handleEditItem} />
     </div>
   );
 }

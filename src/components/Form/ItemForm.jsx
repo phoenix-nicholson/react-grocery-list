@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ItemForm.css';
 
 export default function ItemForm({ handleAddItem, items }) {
   const [newItem, setNewItem] = useState('');
@@ -11,7 +12,7 @@ export default function ItemForm({ handleAddItem, items }) {
   console.log('items', items);
 
   return (
-    <div>
+    <div className="itemForm">
       <form onSubmit={handleSubmit}>
         <div>
           <input
