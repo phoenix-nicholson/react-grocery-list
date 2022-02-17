@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ItemForm({ handleAddItem }) {
+export default function ItemForm({ handleAddItem, items }) {
   const [newItem, setNewItem] = useState('');
 
   const handleSubmit = (e) => {
@@ -8,6 +8,7 @@ export default function ItemForm({ handleAddItem }) {
     setNewItem('');
     handleAddItem(newItem);
   };
+  console.log('items', items);
 
   return (
     <div>
@@ -15,12 +16,13 @@ export default function ItemForm({ handleAddItem }) {
         <div>
           <input
             type="text"
+            value={newItem}
             placeholder="add item"
             onChange={(e) => setNewItem(e.target.value)}
           ></input>
         </div>
 
-        <button type="submit"> submit </button>
+        <button type="submit"> Add Item 🛒 </button>
       </form>
     </div>
   );
