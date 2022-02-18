@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 
 const initialEntry = [
   { id: 0, text: 'Meat 🍖', done: false },
@@ -28,6 +28,9 @@ function itemReducer(items, action) {
     }
     case 'deleted': {
       return items.filter((item) => item.id !== action.id);
+    }
+    case 'clear': {
+      return [];
     }
     default: {
       throw Error(`Unknown action: ${action.type}`);
@@ -62,8 +65,16 @@ const ListProvider = ({ children }) => {
     });
   };
 
+  const handleClearList = () => {
+    dispatch({
+      type: 'clear',
+    });
+  };
+
   return (
-    <ListContext.Provider value={{ items, handleAddItem, handleDeleteItem, handleEditItem }}>
+    <ListContext.Provider
+      value={{ items, handleClearList, handleAddItem, handleDeleteItem, handleEditItem }}
+    >
       {children}
     </ListContext.Provider>
   );
