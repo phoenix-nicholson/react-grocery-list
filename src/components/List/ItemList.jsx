@@ -22,13 +22,13 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
       <>
         <input
           type="text"
-          aria-label="Edit-Field"
+          aria-label="Edit Field"
           value={item.text}
           onChange={(e) => {
             handleEditItem({ ...item, text: e.target.value });
           }}
         />
-        <button aria-label="Save-Button" onClick={() => setEditItem(false)}>
+        <button aria-label="Save Button" onClick={() => setEditItem(false)}>
           save
         </button>
       </>
@@ -37,16 +37,16 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
     itemContent = (
       <>
         <p>{item.text}</p>
-        <button aria-label={`Edit${item.text}`} onClick={() => setEditItem(true)}>
+        <button aria-label={`Edit ${item.text}`} onClick={() => setEditItem(true)}>
           edit
         </button>
       </>
     );
   }
   return (
-    <label>
+    <div>
       <input
-        aria-label="Check-Box"
+        aria-label="Check Box"
         type="checkbox"
         checked={item.done}
         onChange={(e) => {
@@ -58,12 +58,12 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
       />
       {itemContent}
       <button
-        aria-label={`Delete-${item.text}`}
+        aria-label={`Delete ${item.text}`}
         type="button"
         onClick={() => handleDeleteItem(item.id)}
       >
         delete
       </button>
-    </label>
+    </div>
   );
 }
