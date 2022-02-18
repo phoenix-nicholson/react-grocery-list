@@ -1,11 +1,14 @@
 import './App.css';
+import ListProvider from './context/ListContext';
 import Shop from './views/Shop/Shop';
 
 function App() {
   return (
-    <div className="App">
-      <Shop />
-    </div>
+    <ListProvider>
+      <div className="App">
+        <Shop />
+      </div>
+    </ListProvider>
   );
 }
 
