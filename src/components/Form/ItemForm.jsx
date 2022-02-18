@@ -15,6 +15,7 @@ export default function ItemForm({ handleAddItem }) {
       <form onSubmit={handleSubmit}>
         <div>
           <input
+            className="itemInput"
             type="text"
             value={newItem}
             placeholder="add item"
@@ -22,7 +23,9 @@ export default function ItemForm({ handleAddItem }) {
           ></input>
         </div>
 
-        <button type="submit"> Add Item 🛒 </button>
+        <button className="submitBtn" type="submit">
+          Add Item 🛒
+        </button>
       </form>
     </div>
   );

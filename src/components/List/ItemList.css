@@ -8,5 +8,17 @@ button {
   flex-wrap: wrap;
 }
 .item {
-  border: 1px solid black;
+  border: 1px solid red;
+  margin: 3px;
+  color: white;
+  border-radius: 5%;
+}
+.listBtn:hover {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+.listBtn {
+  background-color: transparent;
+  color: white;
+  border: 0px solid transparent;
 }

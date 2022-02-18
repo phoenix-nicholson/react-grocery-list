@@ -1,0 +1,14 @@
+.headerP {
+  color: white;
+  text-decoration: underline;
+}
+.headerBtn:hover {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+.headerBtn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+}

@@ -28,7 +28,7 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
             handleEditItem({ ...item, text: e.target.value });
           }}
         />
-        <button aria-label="Save Button" onClick={() => setEditItem(false)}>
+        <button className="listBtn" aria-label="Save Button" onClick={() => setEditItem(false)}>
           save
         </button>
       </>
@@ -37,7 +37,11 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
     itemContent = (
       <>
         <p>{item.text}</p>
-        <button aria-label={`Edit ${item.text}`} onClick={() => setEditItem(true)}>
+        <button
+          className="listBtn"
+          aria-label={`Edit ${item.text}`}
+          onClick={() => setEditItem(true)}
+        >
           edit
         </button>
       </>
@@ -58,6 +62,7 @@ function Item({ item, handleEditItem, handleDeleteItem }) {
       />
       {itemContent}
       <button
+        className="listBtn"
         aria-label={`Delete ${item.text}`}
         type="button"
         onClick={() => handleDeleteItem(item.id)}

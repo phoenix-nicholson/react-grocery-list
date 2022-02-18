@@ -1,10 +1,13 @@
 import React from 'react';
+import './Header.css';
 
 export default function Header({ items, handleClearList }) {
   return (
     <div>
-      <p>{items.length}</p>
-      <button onClick={handleClearList}>Empty cart</button>
+      <p className="headerP">{items.length}</p>
+      <button className="headerBtn" onClick={handleClearList}>
+        Empty cart
+      </button>
     </div>
   );
 }
